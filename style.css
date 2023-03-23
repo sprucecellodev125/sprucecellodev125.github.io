@@ -1,0 +1,44 @@
+.pfp {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.github-logo {
+    color: black;
+}
+
+.github-logo:hover {
+    color: black;
+}
+
+.nav-link {
+    color: black;
+}
+
+.navbar-brand {
+    color: black;
+}
+
+.discord-logo {
+    color: blue;
+}
+
+.discord-logo:hover {
+    color: blue;
+}
+
+.youtube-logo {
+    color: red;
+}
+
+.youtube-logo:hover {
+    color: red;
+}
