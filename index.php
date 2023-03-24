@@ -40,7 +40,31 @@
     <div class="container text-center">
       <img src="https://avatars.githubusercontent.com/u/91181632" class="pfp" alt="pfp">
       <br>
-      <h3>SpruceCello125</h3>
+      <?php
+      $url = 'https://api.github.com/users/sprucecellodev125';
+      $curl = curl_init($url);
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+          'Accept: application/vnd.github.v3+json',
+          'User-Agent: sprucecellodev125',
+          'X-GitHub-Api-Version: 2022-11-28'
+      ));
+      $data = curl_exec($curl);
+      
+      if ($data === false) {
+          echo "Failed to fetch data from $url: " . curl_error($curl);
+      } else {
+          $json = json_decode($data);
+          if ($json === null) {
+              echo "Failed to parse JSON data";
+          } else {
+              echo "<h3>".$json->name."</h3>";
+          }
+      }
+      
+      curl_close($curl);
+      
+      ?>
       <p>Currently learning back-end web development :)</p>
     </div>
     <div class="container">
@@ -54,18 +78,44 @@
         <tbody>
           <tr>
             <td>Name</td>
-            <td>Christian Pandapotan</td>
+            <td>Christian Pandapotan Sianturi</td>
           </tr>
           <tr>
             <td>Pronouns</td>
             <td>He/him</td>
           </tr>
-          <tr>
-            <td>Skill</td>
-            <td>Networking, HTML, Bootstrap, PHP, Python</td>
-          </tr>
         </tbody>
       </table>
+      <br>
+      <h3>Skills:</h3>
+      HTML/CSS
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-label="HTML/CSS"  style="width: 100%" aria-valuenow="100" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      Bootstrap
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-label="Bootstrap" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      PHP
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-label="PHP" style="width: 52%" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      Cisco
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-label="Cisco" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      Python
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-label="Python" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      JavaScript
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-label="JavaScript" style="width: 38%" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      Mikrotik (nah)
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-label="JavaScript" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
       <br>
       <div class="px-2 d-flex gap-5 text-center">
         <a class="github-logo" href="http://github.com/sprucecellodev125"><h1 class="fa-brands fa-github"></h1></a>
