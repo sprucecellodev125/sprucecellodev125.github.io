@@ -23,5 +23,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          source: "index.php,projects/"
+          source: "index.php,style.css,projects/"
           target: "/var/www/html"
